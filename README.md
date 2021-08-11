@@ -1,5 +1,12 @@
 # SwiftyXPC
 
+
+### Pho's Notes on compability:
+
+It looks like `XPCConnection` and `XPCListener` are the only 2 macOS 12.0+ classes (that use the async/await).
+The rest of the conversion helper extensions and stuff work just fine.
+
+
 ## Hmm, what’s this?
 
 SwiftyXPC is a wrapper for Apple’s XPC interprocess communication library that gives it an easy-to-use, idiomatic Swift interface.

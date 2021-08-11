@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SwiftyXPC",
     platforms: [
-        .macOS(.v12),
+		.macOS(.v11),
         .macCatalyst(.v15)
     ],
     products: [

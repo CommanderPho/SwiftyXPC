@@ -7,6 +7,7 @@
 
 import XPC
 
+@available(macOS 12.0, *) // Because we declared our XPCConnection to be macOS 12.0+ only...
 public final class XPCListener {
     public enum ListenerType {
         case anonymous

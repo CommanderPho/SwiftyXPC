@@ -8,6 +8,7 @@
 import XPC
 import System
 
+@available(macOS 12.0, *)
 internal class XPCEventHandler {
     static let responseKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ResponseKey"
     static let errorKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ErrorKey"

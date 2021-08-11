@@ -1,6 +1,7 @@
 import System
 import XPC
 
+//@available(macOS 12.0, *)
 public class XPCConnection {
     static let responseKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ResponseKey"
     static let errorKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ErrorKey"
@@ -66,7 +67,8 @@ public class XPCConnection {
         xpc_connection_get_pid(self.connection)
     }
 
-    public func setCodeSigningRequirement(_ requirement: String) throws {
+	@available(macOS 12.0, *)
+	public func setCodeSigningRequirement(_ requirement: String) throws {
         guard xpc_connection_set_peer_code_signing_requirement(self.connection, requirement) == 0 else {
             throw XPCError.invalidCodeSignatureRequirement
         }
@@ -92,7 +94,8 @@ public class XPCConnection {
         XPCEndpoint(connection: self.connection)
     }
 
-    public func sendMessage(_ request: [String : Any]) async throws -> [String : Any] {
+	@available(macOS 12.0.0, *) // Due to 
+	public func sendMessage(_ request: [String : Any]) async throws -> [String : Any] {
         guard let xpcRequest = request.toXPCObject() else { throw Errno.invalidArgument }
 
         return try await withCheckedThrowingContinuation { continuation in

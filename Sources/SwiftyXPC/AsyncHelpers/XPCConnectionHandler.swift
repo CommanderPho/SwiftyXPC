@@ -7,6 +7,7 @@
 
 import XPC
 
+@available(macOS 12.0.0, *)
 private actor XPCConnectionHandler {
 
 }
