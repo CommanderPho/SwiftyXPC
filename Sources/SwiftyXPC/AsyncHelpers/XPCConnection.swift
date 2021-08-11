@@ -2,6 +2,7 @@ import System
 import XPC
 
 //@available(macOS 12.0, *)
+@available(macOS 12.0, *)
 public class XPCConnection {
     static let responseKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ResponseKey"
     static let errorKey = "com.charlessoft.SwiftyXPC.XPCEventHandler.ErrorKey"
